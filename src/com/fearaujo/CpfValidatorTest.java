@@ -10,7 +10,7 @@ public class CpfValidatorTest {
 	@Test
 	public void cpfTest(){
 		
-		// cpfs validos
+		// cpfs invalidos
 		assertEquals(false, CpfValidator.isCPF("0"));
 		assertEquals(false, CpfValidator.isCPF("00000000000"));
 		assertEquals(false, CpfValidator.isCPF("11111111111"));
@@ -24,7 +24,7 @@ public class CpfValidatorTest {
 		assertEquals(false, CpfValidator.isCPF("321.324.545-44"));
 		assertEquals(false, CpfValidator.isCPF("456.567.767-57"));
 		
-		// cpfs invalidos
+		// cpfs validos
 		// nao e permetido caracteres especiais
 		assertEquals(true, CpfValidator.isCPF("07172152298"));
 		assertEquals(true, CpfValidator.isCPF("84778180372"));
