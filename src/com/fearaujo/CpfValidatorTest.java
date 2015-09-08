@@ -2,7 +2,6 @@ package com.fearaujo;
 
 import static org.junit.Assert.*;
 
-import org.junit.Before;
 import org.junit.Test;
 
 public class CpfValidatorTest {
@@ -11,7 +10,7 @@ public class CpfValidatorTest {
 	@Test
 	public void cpfTest(){
 		
-		// invalid cpfs
+		// cpfs validos
 		assertEquals(false, CpfValidator.isCPF("0"));
 		assertEquals(false, CpfValidator.isCPF("00000000000"));
 		assertEquals(false, CpfValidator.isCPF("11111111111"));
@@ -25,15 +24,16 @@ public class CpfValidatorTest {
 		assertEquals(false, CpfValidator.isCPF("321.324.545-44"));
 		assertEquals(false, CpfValidator.isCPF("456.567.767-57"));
 		
-		// valid cpfs
-		assertEquals(false, CpfValidator.isCPF("071.721.522-98"));
-		assertEquals(false, CpfValidator.isCPF("847.781.803-72"));
-		assertEquals(false, CpfValidator.isCPF("471.382.531-09"));
-		assertEquals(false, CpfValidator.isCPF("434.896.155-73"));
-		assertEquals(false, CpfValidator.isCPF("179.947.946-37"));
-		assertEquals(false, CpfValidator.isCPF("328.179.426-20"));
-		assertEquals(false, CpfValidator.isCPF("916.326.148-04"));
-		assertEquals(false, CpfValidator.isCPF("761.859.339-69"));
+		// cpfs invalidos
+		// nao e permetido caracteres especiais
+		assertEquals(true, CpfValidator.isCPF("07172152298"));
+		assertEquals(true, CpfValidator.isCPF("84778180372"));
+		assertEquals(true, CpfValidator.isCPF("47138253109"));
+		assertEquals(true, CpfValidator.isCPF("43489615573"));
+		assertEquals(true, CpfValidator.isCPF("17994794637"));
+		assertEquals(true, CpfValidator.isCPF("32817942620"));
+		assertEquals(true, CpfValidator.isCPF("91632614804"));
+		assertEquals(true, CpfValidator.isCPF("76185933969"));
 		
 	}
 
