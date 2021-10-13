@@ -56,18 +56,15 @@ public class CpfValidator {
     }
 	
 	private static boolean numerosDoCpfSaoIguais(String cpf) {
-		for (int i = 0; i <= 9; i++) {
-			String[] numeros = new String[11];
-			Arrays.fill(numeros, Integer.toString(i));
-			
-			String numerosString = String.join("", numeros);
-			
-			if (cpf.equals(numerosString)) {
-				return true;
-			}
-		}
-		
-		return false;
+		String primeiroCaracterDoCpf = Character.toString(cpf.get().charAt(0));
+        	int primeiroNumeroDoCpf = Integer.parseInt(primeiroCaracterDoCpf);
+
+        	String[] numeros = new String[11];
+        	Arrays.fill(numeros, Integer.toString(primeiroNumeroDoCpf));
+
+        	String numerosString = String.join("", numeros);
+
+        	return cpf.equals(numerosString);
 	}
 	
 }
